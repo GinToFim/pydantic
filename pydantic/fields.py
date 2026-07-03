@@ -9,6 +9,7 @@ import sys
 from collections.abc import Callable, Mapping
 from copy import copy
 from dataclasses import Field as DataclassField
+from decimal import Decimal
 from functools import cached_property
 from types import EllipsisType
 from typing import TYPE_CHECKING, Annotated, Any, ClassVar, Literal, TypeAlias, TypeVar, final, overload
@@ -68,7 +69,7 @@ class _FromFieldInfoInputs(TypedDict, total=False):
     ge: annotated_types.SupportsGe | None
     lt: annotated_types.SupportsLt | None
     le: annotated_types.SupportsLe | None
-    multiple_of: float | None
+    multiple_of: float | Decimal | None
     strict: bool | None
     min_length: int | None
     max_length: int | None
@@ -952,7 +953,7 @@ def Field(
     ge: annotated_types.SupportsGe | None = _Unset,
     lt: annotated_types.SupportsLt | None = _Unset,
     le: annotated_types.SupportsLe | None = _Unset,
-    multiple_of: float | None = _Unset,
+    multiple_of: float | Decimal | None = _Unset,
     allow_inf_nan: bool | None = _Unset,
     max_digits: int | None = _Unset,
     decimal_places: int | None = _Unset,
@@ -992,7 +993,7 @@ def Field(
     ge: annotated_types.SupportsGe | None = _Unset,
     lt: annotated_types.SupportsLt | None = _Unset,
     le: annotated_types.SupportsLe | None = _Unset,
-    multiple_of: float | None = _Unset,
+    multiple_of: float | Decimal | None = _Unset,
     allow_inf_nan: bool | None = _Unset,
     max_digits: int | None = _Unset,
     decimal_places: int | None = _Unset,
@@ -1035,7 +1036,7 @@ def Field(
     ge: annotated_types.SupportsGe | None = _Unset,
     lt: annotated_types.SupportsLt | None = _Unset,
     le: annotated_types.SupportsLe | None = _Unset,
-    multiple_of: float | None = _Unset,
+    multiple_of: float | Decimal | None = _Unset,
     allow_inf_nan: bool | None = _Unset,
     max_digits: int | None = _Unset,
     decimal_places: int | None = _Unset,
@@ -1075,7 +1076,7 @@ def Field(  # pyright: ignore[reportOverlappingOverload]
     ge: annotated_types.SupportsGe | None = _Unset,
     lt: annotated_types.SupportsLt | None = _Unset,
     le: annotated_types.SupportsLe | None = _Unset,
-    multiple_of: float | None = _Unset,
+    multiple_of: float | Decimal | None = _Unset,
     allow_inf_nan: bool | None = _Unset,
     max_digits: int | None = _Unset,
     decimal_places: int | None = _Unset,
@@ -1118,7 +1119,7 @@ def Field(
     ge: annotated_types.SupportsGe | None = _Unset,
     lt: annotated_types.SupportsLt | None = _Unset,
     le: annotated_types.SupportsLe | None = _Unset,
-    multiple_of: float | None = _Unset,
+    multiple_of: float | Decimal | None = _Unset,
     allow_inf_nan: bool | None = _Unset,
     max_digits: int | None = _Unset,
     decimal_places: int | None = _Unset,
@@ -1157,7 +1158,7 @@ def Field(  # No default set
     ge: annotated_types.SupportsGe | None = _Unset,
     lt: annotated_types.SupportsLt | None = _Unset,
     le: annotated_types.SupportsLe | None = _Unset,
-    multiple_of: float | None = _Unset,
+    multiple_of: float | Decimal | None = _Unset,
     allow_inf_nan: bool | None = _Unset,
     max_digits: int | None = _Unset,
     decimal_places: int | None = _Unset,
@@ -1197,7 +1198,7 @@ def Field(  # noqa: C901
     ge: annotated_types.SupportsGe | None = _Unset,
     lt: annotated_types.SupportsLt | None = _Unset,
     le: annotated_types.SupportsLe | None = _Unset,
-    multiple_of: float | None = _Unset,
+    multiple_of: float | Decimal | None = _Unset,
     allow_inf_nan: bool | None = _Unset,
     max_digits: int | None = _Unset,
     decimal_places: int | None = _Unset,

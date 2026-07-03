@@ -3473,6 +3473,7 @@ ANY_THING = object()
                 }
             ],
         ),
+        (dict(multiple_of=Decimal('5')), Decimal('10'), Decimal('10'))
     ],
 )
 @pytest.mark.parametrize('mode', ['Field', 'condecimal', 'optional'])
